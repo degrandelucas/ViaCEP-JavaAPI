@@ -9,8 +9,9 @@ public class App {
         Scanner readCEP = new Scanner (System.in);
         System.out.println("Digite o CEP da cidade: ");
         String cep = readCEP.nextLine();
-        Connection.requestCEP(cep);
+        String infomationOfCEP = String.valueOf(Connection.requestCEP(cep));
 
+        System.out.println(infomationOfCEP);
 
         readCEP.close();
 
