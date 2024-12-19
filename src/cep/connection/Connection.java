@@ -12,7 +12,7 @@ import java.net.http.HttpResponse;
 
 public class Connection {
 
-    public static InfoCEP requestCEP(String cep) {
+    public static String requestCEP(String cep) {
         HttpClient client = HttpClient.newBuilder().build();
         String urlAPI = "https://viacep.com.br/ws/" + cep + "/json/";
         try {
@@ -20,7 +20,8 @@ public class Connection {
                     .uri(URI.create(urlAPI)).GET()
                     .build();
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-            return new Gson().fromJson(response.body(), InfoCEP.class);
+            return response.body();
+            // return new Gson().fromJson(response.body(), InfoCEP.class);
         } catch (IOException | InterruptedException e) {
             throw new RuntimeException("CEP nao encontrado");
         }

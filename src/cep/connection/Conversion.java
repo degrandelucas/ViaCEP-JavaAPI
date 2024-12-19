@@ -6,7 +6,7 @@ import com.google.gson.GsonBuilder;
 public class Conversion {
 
     Gson gson = new GsonBuilder().setPrettyPrinting().create();
-
+/*
     public static String conversionFromJson{
         return;
     }
@@ -14,5 +14,5 @@ public class Conversion {
     public static String conversionToJson{
         return;
     }
-
+*/
 }
